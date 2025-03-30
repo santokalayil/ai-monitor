@@ -29,37 +29,29 @@ jobs:
     - name: Set up Poetry configuration
       run: |
         mkdir -p ~/.config/pypoetry
-        echo '[virtualenvs]\ncreate = true\nin-project = true' > ~/.config/pypoetry/config.toml
+        cat > ~/.config/pypoetry/config.toml << 'EOL'
+        [virtualenvs]
+        create = true
+        in-project = true
+        EOL
     
-    - name: Debug Poetry Version
+    - name: Debug Environment
       run: |
-        poetry --version
-    
-    - name: Debug Python Version
-      run: |
+        echo "Python version:"
         python --version
-        which python
-    
-    - name: Debug Poetry Environment
-      run: |
-        poetry env info || true
-        poetry env list || true
-        poetry env use python || true
-    
-    - name: Debug Poetry Dependencies
-      run: |
-        poetry show || true
-    
-    - name: Install dependencies
-      run: |
-        echo "Current directory: $(pwd)"
+        echo "Poetry version:"
+        poetry --version
+        echo "Current directory:"
+        pwd
         echo "Directory contents:"
         ls -la
         echo "Poetry config:"
         poetry config --list
-        echo "Attempting to install dependencies..."
+    
+    - name: Install dependencies
+      run: |
+        poetry env use python
         poetry install --no-interaction --verbose
-        echo "Installation completed"
     
     - name: Debug Python Path
       run: |
