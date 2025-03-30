@@ -2,6 +2,13 @@
 Tests for the core functionality of the AI monitor package.
 """
 import pytest
+import sys
+from pathlib import Path
+
+# Add the project root to Python path
+project_root = Path(__file__).parent.parent
+sys.path.insert(0, str(project_root))
+
 from ai.core import monitor_status, get_version
 
 def test_monitor_status():

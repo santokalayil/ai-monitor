@@ -31,7 +31,12 @@ jobs:
         poetry config virtualenvs.in-project true
     
     - name: Install dependencies
-      run: poetry install
+      run: |
+        poetry install --no-interaction
+    
+    - name: Install package in development mode
+      run: |
+        poetry run pip install -e .
     
     - name: Run tests with pytest
       run: |
