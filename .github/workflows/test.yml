@@ -47,11 +47,15 @@ jobs:
         ls -la
         echo "Poetry config:"
         poetry config --list
+        echo "Python path:"
+        python -c "import sys; print('\n'.join(sys.path))"
     
     - name: Install dependencies
       run: |
+        set -x
         poetry env use python
         poetry install --no-interaction --verbose
+        set +x
     
     - name: Debug Python Path
       run: |
