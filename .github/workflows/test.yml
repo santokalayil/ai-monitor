@@ -26,10 +26,10 @@ jobs:
         python -m pip install --upgrade pip
         python -m pip install poetry==1.7.1
     
-    - name: Configure Poetry
+    - name: Set up Poetry configuration
       run: |
-        poetry config virtualenvs.create true --local
-        poetry config virtualenvs.in-project true --local
+        mkdir -p ~/.config/pypoetry
+        echo '[virtualenvs]\ncreate = true\nin-project = true' > ~/.config/pypoetry/config.toml
     
     - name: Debug Poetry Environment
       run: |
