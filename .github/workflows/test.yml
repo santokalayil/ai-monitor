@@ -31,11 +31,17 @@ jobs:
         mkdir -p ~/.config/pypoetry
         echo '[virtualenvs]\ncreate = true\nin-project = true' > ~/.config/pypoetry/config.toml
     
-    - name: Debug Poetry Environment
+    - name: Debug Poetry Version
       run: |
         poetry --version
+    
+    - name: Debug Poetry Environment
+      run: |
         poetry env info
-        poetry show
+    
+    - name: Debug Poetry Dependencies
+      run: |
+        poetry show || true
     
     - name: Install dependencies
       run: |
