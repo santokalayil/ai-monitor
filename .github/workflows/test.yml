@@ -64,7 +64,7 @@ jobs:
         echo "Installing dependencies..."
         poetry install --no-interaction --no-root
         echo "Installing root package..."
-        poetry install --no-interaction --only ai-monitor
+        poetry install --no-interaction
         set +x
     
     - name: Debug Python Path
