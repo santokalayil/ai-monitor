@@ -24,7 +24,7 @@ jobs:
     - name: Install Poetry
       run: |
         python -m pip install --upgrade pip
-        python -m pip install poetry==1.7.1
+        python -m pip install poetry==1.6.1
     
     - name: Set up Poetry configuration
       run: |
@@ -51,8 +51,13 @@ jobs:
         python -c "import sys; print('\n'.join(sys.path))"
     
     - name: Install dependencies
+      env:
+        POETRY_VIRTUALENVS_CREATE: "true"
+        POETRY_VIRTUALENVS_IN_PROJECT: "true"
+        POETRY_NO_INTERACTION: "true"
       run: |
         set -x
+        poetry env remove --all || true
         poetry env use python
         poetry install --no-interaction --verbose
         set +x
