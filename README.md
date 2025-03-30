@@ -6,16 +6,10 @@ A Python package for monitoring AI systems.
 
 ## Installation
 
-You can install the package using Poetry:
+You can install the package using UV:
 
 ```bash
-poetry install
-```
-
-Or using pip:
-
-```bash
-pip install -e .
+uv pip install -r requirements.txt
 ```
 
 ## Usage
@@ -37,10 +31,11 @@ print(f"Status: {status}")
 To set up the development environment:
 
 1. Clone the repository
-2. Install Poetry if you haven't already
-3. Run `poetry install`
-4. Run `poetry shell` to activate the virtual environment
-5. Run `python main.py` to test the package
+2. Install dependencies using UV:
+   ```bash
+   uv pip install -r requirements.txt
+   ```
+3. Run `python main.py` to test the package
 
 ## License
 

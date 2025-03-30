@@ -4,6 +4,10 @@ from pydantic import BaseModel, Field
 from pydantic_ai import Agent
 import asyncio
 import nest_asyncio
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
 
 # Apply nest_asyncio to allow async code to run in Jupyter notebooks
 nest_asyncio.apply()
@@ -18,7 +22,7 @@ async def weather_example() -> None:
     """Example of using PydanticAI with structured responses"""
     # Create an agent with a specific model
     agent = Agent(
-        'openai:gpt-4',  # You can change this to any supported model
+        'google-gla:gemini-2.0-flash',
         result_type=WeatherResponse,
         system_prompt="You are a weather assistant. Provide weather information and clothing recommendations."
     )
@@ -37,7 +41,7 @@ def basic_example() -> None:
     """Basic example of using PydanticAI"""
     # Create a simple agent
     agent = Agent(
-        'google-gla:gemini-1.5-flash',
+        'google-gla:gemini-2.0-flash',
         system_prompt="Be concise, reply with one sentence."
     )
     
