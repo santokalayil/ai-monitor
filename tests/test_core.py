@@ -1,15 +1,28 @@
 """
 Tests for the core functionality of the AI monitor package.
 """
-import pytest
+import os
 import sys
+import pytest
 from pathlib import Path
 
 # Add the project root to Python path
 project_root = Path(__file__).parent.parent
-sys.path.insert(0, str(project_root))
+if str(project_root) not in sys.path:
+    sys.path.insert(0, str(project_root))
 
-from ai.core import monitor_status, get_version
+# Debug information
+print(f"Python path: {sys.path}")
+print(f"Current directory: {os.getcwd()}")
+print(f"Project root: {project_root}")
+print(f"Files in project root: {os.listdir(project_root)}")
+
+try:
+    from ai.core import monitor_status, get_version
+except ImportError as e:
+    print(f"Import error: {e}")
+    print(f"Available modules: {os.listdir(project_root / 'ai')}")
+    raise
 
 def test_monitor_status():
     """Test that monitor_status returns the expected string."""

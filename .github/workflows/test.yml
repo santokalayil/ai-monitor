@@ -49,9 +49,16 @@ jobs:
       run: |
         poetry run pip list
     
+    - name: Debug Project Structure
+      run: |
+        ls -la
+        ls -la tests/
+    
     - name: Run tests with pytest
       run: |
-        poetry run python -m pytest tests/ -v --tb=short
+        poetry run python -m pytest tests/ -v --tb=short || true
+        echo "Pytest exit code: $?"
+        poetry run python -m pytest tests/ -v --tb=short --pdb
     
     - name: Run type checking
       run: |
