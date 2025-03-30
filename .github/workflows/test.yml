@@ -23,24 +23,35 @@ jobs:
     
     - name: Install Poetry
       run: |
-        curl -sSL https://install.python-poetry.org | python3 -
+        python -m pip install --upgrade pip
+        python -m pip install poetry==1.7.1
     
     - name: Configure Poetry
       run: |
         poetry config virtualenvs.create true
         poetry config virtualenvs.in-project true
     
+    - name: Debug Poetry Environment
+      run: |
+        poetry --version
+        poetry env info
+        poetry show
+    
     - name: Install dependencies
       run: |
         poetry install --no-interaction
     
-    - name: Install package in development mode
+    - name: Debug Python Path
       run: |
-        poetry run pip install -e .
+        poetry run python -c "import sys; print('\n'.join(sys.path))"
+    
+    - name: Debug Package Installation
+      run: |
+        poetry run pip list
     
     - name: Run tests with pytest
       run: |
-        poetry run pytest tests/ -v
+        poetry run python -m pytest tests/ -v --tb=short
     
     - name: Run type checking
       run: |
