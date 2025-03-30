@@ -2,6 +2,7 @@
 Core functionality for AI monitoring.
 """
 from typing import Final
+from .version import get_version as get_package_version
 
 def monitor_status() -> str:
     """
@@ -19,9 +20,7 @@ def get_version() -> str:
     Returns:
         str: Version string
     """
-    from . import __version__
-    return __version__
+    return get_package_version()
 
 # Type constants
-VERSION: Final[str] = "0.1.0"
 STATUS_MESSAGE: Final[str] = "AI systems are operational" 

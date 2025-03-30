@@ -1,6 +1,6 @@
 [project]
 name = "ai"
-version = "0.1.0"
+version = "0.2.0"
 description = "AI Monitor Package"
 authors = [
     {name = "Santo K Thomas", email = "santokalayil@gmail.com"}
