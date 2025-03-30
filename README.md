@@ -38,4 +38,8 @@ To set up the development environment:
 2. Install Poetry if you haven't already
 3. Run `poetry install`
 4. Run `poetry shell` to activate the virtual environment
-5. Run `python main.py` to test the package 
+5. Run `python main.py` to test the package
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details. 
