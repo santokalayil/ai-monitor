@@ -59,6 +59,9 @@ jobs:
         set -x
         poetry env remove --all || true
         poetry env use python
+        echo "Checking package structure:"
+        ls -la ai/
+        echo "Attempting to install dependencies..."
         poetry install --no-interaction --verbose
         set +x
     

@@ -5,6 +5,9 @@ description = "AI Monitor Package"
 authors = ["Santo K Thomas <santokalayil@gmail.com>"]
 readme = "README.md"
 license = "MIT"
+packages = [
+    { include = "ai", from = "." }
+]
 classifiers = [
     "Development Status :: 3 - Alpha",
     "Intended Audience :: Developers",
