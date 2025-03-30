@@ -42,4 +42,16 @@ To set up the development environment:
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details. 
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Disclaimer
+
+This software is provided "as is" without any warranties, express or implied. The authors and contributors are not responsible for any damages, losses, or issues that may arise from using this software. Users are solely responsible for:
+
+- Verifying the software meets their needs before use
+- Testing the software in their specific environment
+- Ensuring proper implementation and integration
+- Any modifications or customizations they make
+- Any issues that arise from their use of the software
+
+By using this software, you agree to take full responsibility for any consequences of its use and to not hold the authors or contributors liable for any problems that may occur. 
