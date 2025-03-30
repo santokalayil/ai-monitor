@@ -61,8 +61,10 @@ jobs:
         poetry env use python
         echo "Checking package structure:"
         ls -la ai/
-        echo "Attempting to install dependencies..."
-        poetry install --no-interaction --verbose
+        echo "Installing dependencies..."
+        poetry install --no-interaction --no-root
+        echo "Installing root package..."
+        poetry install --no-interaction --only ai-monitor
         set +x
     
     - name: Debug Python Path

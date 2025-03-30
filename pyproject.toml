@@ -8,6 +8,7 @@ license = "MIT"
 packages = [
     { include = "ai", from = "." }
 ]
+include = ["ai/**/*.py"]
 classifiers = [
     "Development Status :: 3 - Alpha",
     "Intended Audience :: Developers",
