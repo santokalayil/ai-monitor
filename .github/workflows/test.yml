@@ -52,7 +52,14 @@ jobs:
     
     - name: Install dependencies
       run: |
-        poetry install --no-interaction
+        echo "Current directory: $(pwd)"
+        echo "Directory contents:"
+        ls -la
+        echo "Poetry config:"
+        poetry config --list
+        echo "Attempting to install dependencies..."
+        poetry install --no-interaction --verbose
+        echo "Installation completed"
     
     - name: Debug Python Path
       run: |

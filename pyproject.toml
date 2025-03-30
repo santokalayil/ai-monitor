@@ -1,25 +1,25 @@
-[project]
-name = "ai"
+[tool.poetry]
+name = "ai-monitor"
 version = "0.2.0"
 description = "AI Monitor Package"
-authors = [
-    {name = "Santo K Thomas", email = "santokalayil@gmail.com"}
-]
+authors = ["Santo K Thomas <santokalayil@gmail.com>"]
 readme = "README.md"
-requires-python = "^3.8"
-dependencies = [
-    "requests>=2.32.3,<3.0.0"
+packages = [
+    { include = "ai", from = "." }
 ]
 
+[tool.poetry.dependencies]
+python = "^3.8"
+requests = "^2.32.3"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.0.0"
+pytest-cov = "^4.1.0"
+mypy = "^1.8.0"
 
 [build-system]
-requires = ["poetry-core>=2.0.0,<3.0.0"]
+requires = ["poetry-core>=2.0.0"]
 build-backend = "poetry.core.masonry.api"
-
-[tool.poetry]
-packages = [
-    { include = "ai", from = "ai" }
-]
 
 [tool.mypy]
 python_version = "3.8"
@@ -61,8 +61,3 @@ omit = [
     "setup.py",
     "conftest.py",
 ]
-
-[tool.poetry.group.dev.dependencies]
-pytest = "^8.0.0"
-pytest-cov = "^4.1.0"
-mypy = "^1.8.0"
