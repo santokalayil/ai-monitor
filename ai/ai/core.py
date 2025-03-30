@@ -1,8 +1,9 @@
 """
 Core functionality for AI monitoring.
 """
+from typing import Final
 
-def monitor_status():
+def monitor_status() -> str:
     """
     Check the status of AI systems.
     
@@ -11,7 +12,7 @@ def monitor_status():
     """
     return "AI systems are operational"
 
-def get_version():
+def get_version() -> str:
     """
     Get the current version of the AI monitor.
     
@@ -19,4 +20,8 @@ def get_version():
         str: Version string
     """
     from . import __version__
-    return __version__ 
+    return __version__
+
+# Type constants
+VERSION: Final[str] = "0.1.0"
+STATUS_MESSAGE: Final[str] = "AI systems are operational" 
