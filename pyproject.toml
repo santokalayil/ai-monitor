@@ -35,3 +35,34 @@ warn_unused_ignores = true
 warn_no_return = true
 warn_unreachable = true
 strict_optional = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+addopts = "-v --cov=ai"
+
+[tool.coverage.run]
+source = ["ai"]
+branch = true
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "def __repr__",
+    "if self.debug:",
+    "raise NotImplementedError",
+    "if __name__ == .__main__.:",
+    "pass",
+    "raise ImportError",
+]
+ignore_errors = true
+omit = [
+    "tests/*",
+    "setup.py",
+    "conftest.py",
+]
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.0.0"
+pytest-cov = "^4.1.0"
+mypy = "^1.8.0"
