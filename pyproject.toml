@@ -9,6 +9,7 @@ packages = [
     { include = "ai", from = "." }
 ]
 include = ["ai/**/*.py"]
+exclude = ["tests/*"]
 classifiers = [
     "Development Status :: 3 - Alpha",
     "Intended Audience :: Developers",

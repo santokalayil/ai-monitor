@@ -64,7 +64,9 @@ jobs:
         echo "Installing dependencies..."
         poetry install --no-interaction --no-root
         echo "Installing root package..."
-        poetry install --no-interaction
+        poetry install --no-interaction --verbose
+        echo "Verifying installation..."
+        poetry run python -c "import ai; print(ai.__file__)"
         set +x
     
     - name: Debug Python Path
