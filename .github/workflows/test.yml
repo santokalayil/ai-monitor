@@ -35,9 +35,16 @@ jobs:
       run: |
         poetry --version
     
+    - name: Debug Python Version
+      run: |
+        python --version
+        which python
+    
     - name: Debug Poetry Environment
       run: |
-        poetry env info
+        poetry env info || true
+        poetry env list || true
+        poetry env use python || true
     
     - name: Debug Poetry Dependencies
       run: |
