@@ -33,8 +33,10 @@ jobs:
     - name: Install dependencies
       run: poetry install
     
-    - name: Run tests
-      run: poetry run python -m pytest tests/
+    - name: Run tests with pytest
+      run: |
+        poetry run pytest tests/ -v
     
     - name: Run type checking
-      run: poetry run mypy ai/ 
+      run: |
+        poetry run mypy ai/ 
