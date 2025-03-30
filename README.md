@@ -1,5 +1,7 @@
 # AI Monitor
 
+> ⚠️ **Development Status**: This project is currently in early development and is not ready for production use. The API and functionality may change significantly before the first stable release.
+
 A Python package for monitoring AI systems.
 
 ## Installation
@@ -54,4 +56,16 @@ This software is provided "as is" without any warranties, express or implied. Th
 - Any modifications or customizations they make
 - Any issues that arise from their use of the software
 
-By using this software, you agree to take full responsibility for any consequences of its use and to not hold the authors or contributors liable for any problems that may occur. 
+By using this software, you agree to take full responsibility for any consequences of its use and to not hold the authors or contributors liable for any problems that may occur.
+
+## Development Status
+
+This project is currently in early development. Please note:
+
+- The API is not stable and may change
+- Features are being actively developed
+- Documentation is incomplete
+- Test coverage is limited
+- Not recommended for production use
+
+For more details about the development status and roadmap, see [DEVELOPMENT.md](DEVELOPMENT.md). 
